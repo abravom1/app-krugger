@@ -155,8 +155,8 @@ public class EmployeeController {
 	}
 	
 	
-	@PreAuthorize("@authServiceImpl.hasAccessSystem('getAll')")
-	@GetMapping("/betweendatevaccine")
+	@PreAuthorize("hasAuthority('ADMIN')")
+	@GetMapping("/findemployeeByBetweenDate")
 	public ResponseEntity<List<EmployeeDTO>> findemployeeByBetweenDate( @RequestParam(value = "ini") String ini, 
 																		@RequestParam(value = "end") String end ) throws Exception{
 		
